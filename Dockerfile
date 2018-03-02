@@ -21,4 +21,5 @@ RUN apt update \
     && make \
     && make install \
     && cd / \
-    && rm -r /var/nginx
+    && rm -r /var/nginx \
+    && useradd -s /sbin/nologin -M www
