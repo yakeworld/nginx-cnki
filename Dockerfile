@@ -1,3 +1,4 @@
+FROM ubuntu
 MAINTAINER yakeworld@gmail.com 
 RUN apt update \
     && apt-get -yq install build-essential \
