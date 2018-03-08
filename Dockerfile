@@ -27,7 +27,7 @@ RUN apt update \
     && mkdir -p /usr/local/nginx/external \
     && sed -i 's/access_log.*/access_log \/dev\/stdout;/g' /usr/local/nginx/nginx.conf \
     && sed -i 's/error_log.*/error_log \/dev\/stdout info;/g' /usr/local/nginx/nginx.conf \
-    && sed -i 's/^pid/daemon off;\npid/g' /usr/local/nginx/nginx.conf \
+    && sed -i 's/^pid/daemon off;\npid/g' /usr/local/nginx/nginx.conf 
 
 ADD basic.conf /usr/local/nginx/conf.d/basic.conf
 ADD ssl.conf /usr/local/nginx/conf.d/ssl.conf
