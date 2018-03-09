@@ -23,13 +23,7 @@ RUN apt update \
     && cd / \
     && rm -r /var/nginx \
     && useradd -s /sbin/nologin -M www \
-    && rm -rf /usr/local/nginx/conf.d/* \
-    && mkdir -p /usr/local/nginx/external \
-    && sed -i 's/access_log.*/access_log \/dev\/stdout;/g' /usr/local/nginx/nginx.conf \
-    && sed -i 's/error_log.*/error_log \/dev\/stdout info;/g' /usr/local/nginx/nginx.conf \
-    && sed -i 's/^pid/daemon off;\npid/g' /usr/local/nginx/nginx.conf 
-ADD basic.conf /usr/local/nginx/conf.d/basic.conf
-ADD ssl.conf /usr/local/nginx/conf.d/ssl.conf
+    && mkdir -p /usr/local/nginx/external 
 ADD entrypoint.sh /opt/entrypoint.sh
 RUN chmod a+x /opt/entrypoint.sh
 ENTRYPOINT ["/opt/entrypoint.sh"]
