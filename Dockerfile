@@ -23,7 +23,8 @@ RUN apt update \
     && cd / \
     && rm -r /var/nginx \
     && useradd -s /sbin/nologin -M www \
-    && mkdir -p /usr/local/nginx/external 
+    && mkdir -p /usr/local/nginx/external \
+    && mkdir -p /usr/local/nginx/conf.d 
 ADD entrypoint.sh /opt/entrypoint.sh
 RUN chmod a+x /opt/entrypoint.sh
 ENTRYPOINT ["/opt/entrypoint.sh"]
