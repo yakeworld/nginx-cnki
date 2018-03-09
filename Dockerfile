@@ -1,7 +1,7 @@
 FROM ubuntu
 MAINTAINER yakeworld@gmail.com 
 RUN apt update \
-    && apt-get -yq install build-essential wget git  \
+    && apt-get -yq install build-essential wget git openssl  \
     && mkdir /var/nginx \
     && wget -qO- http://nginx.org/download/nginx-1.13.9.tar.gz | tar xz -C /var/nginx/  \
     && wget -qO-  ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.41.tar.gz | tar xz -C /var/nginx/  \
