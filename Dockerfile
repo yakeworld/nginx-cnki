@@ -24,8 +24,7 @@ RUN apt update \
     && rm -r /var/nginx \
     && useradd -s /sbin/nologin -M www \
     && mkdir -p /usr/local/nginx/external \
-    && mkdir -p /usr/local/nginx/conf.d \
-    && rm /usr/local/nginx/nginx.conf
+    && mkdir -p /usr/local/nginx/conf.d 
 
 ADD nginx.conf /usr/local/nginx/nginx.conf
 ADD basic.conf /usr/local/nginx/conf.d/basic.conf
