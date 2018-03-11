@@ -36,5 +36,5 @@ RUN apt update \
     && wget --no-check-certificate https://raw.githubusercontent.com/yakeworld/nginx-cnki/master/entrypoint.sh -O /opt/entrypoint.sh \
     && chmod a+x /opt/entrypoint.sh
 #ENTRYPOINT ["/opt/entrypoint.sh"]
-#CMD ["/usr/local/nginx/sbin/nginx"]    
+CMD ["/usr/local/nginx/sbin/nginx"]    
     
