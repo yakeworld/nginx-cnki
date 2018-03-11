@@ -46,6 +46,6 @@ echo ">> copy /usr/local/nginx/external/*.conf files to /usr/local/nginx/conf.d/
 cp /usr/local/nginx/external/*.conf /usr/local/nginx/conf.d/ 2> /dev/null > /dev/null
 
 # exec CMD
-echo ">> exec docker CMD"
-echo "$@"
-exec "$@"
+#echo ">> exec docker CMD"
+#echo "$@"
+#exec "$@"
