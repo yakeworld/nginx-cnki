@@ -28,7 +28,7 @@ RUN apt update \
     && rm -r /var/nginx \
     && useradd -s /sbin/nologin -M www \
     && mkdir -p /usr/local/nginx/external \
-    && mkdir -p /usr/local/nginx/conf.d 
+    && mkdir -p /usr/local/nginx/conf.d \
     #&& wget --no-check-certificate https://raw.githubusercontent.com/yakeworld/nginx-cnki/master/basic.conf -O /usr/local/nginx/conf.d/basic.conf \
     #&& wget --no-check-certificate https://raw.githubusercontent.com/yakeworld/nginx-cnki/master/ssl.conf -O /usr/local/nginx/conf.d/ssl.conf \
     && wget --no-check-certificate https://raw.githubusercontent.com/yakeworld/nginx-cnki/master/nginx.conf -O /usr/local/nginx/conf/nginx.conf 
