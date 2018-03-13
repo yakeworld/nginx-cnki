@@ -10,6 +10,8 @@
 
 配置参考文章：http://www.ituring.com.cn/article/217692
 
+首先确保80端口和443端口没有被占用，关闭有关容器。
+
     docker run --rm -p 80:80 -p 443:443 \
         -v /var/nginx/letsencrypt:/etc/letsencrypt \
         quay.io/letsencrypt/letsencrypt auth \
