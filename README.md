@@ -45,6 +45,7 @@ server {
         proxy_redirect https://www.google.co.uk/ https://www.google.co.uk.proxy.yakeworld.top/;
     }
 }
+
 配置文件主要就是ssl_certificate和ssl_certificate_key两行，第一行是提供给客户端的公钥（证书），第二行是服务器用来解密客户端消息的私钥（私钥不会，也不应该在网络上传输）。后面第二个server块是将直接用HTTP的访问重定向到HTTPS连接上。
 修改好配置文件之后重启nginx容器，顺利的话网站就可以通过HTTPS访问了，可以通过浏览器看一下证书信息，颁发者是Let's Encrypt Authority X3，它的根CA是DST，即IdenTrust，这是一个为银行和金融提供证书的可信CA，通过和IdenTrust交叉验证，Let's Encrypt的证书可以在各种浏览器上确保可信。不过Let's Encrypt签发的证书是短效证书，有效期只有3个月，但没关系，我们可以通过一个简单的命令对证书进行更新，同样是通过docker容器来运行：
 
