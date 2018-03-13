@@ -58,3 +58,5 @@ docker run --rm -p 80:80 -p 443:443 \
 运行这个命令时，certbot会自动检查确认证书有效期，如果过期时间在一个月之内，就会自动更新。在CoreOS中，由于没有Cron，我们需要通过systemd的timer来做定时调度，比如每个月运行一次这个renew任务就可以了，不过记得运行之前先停止nginx容器，运行之后再启动nginx容器。
 
 除了standalone方式验证之外，还可以使用wwwroot方式来做验证，但在我的环境中，nginx容器只是反向代理，本身没有wwwroot，因此standalone方式比较简单，当然缺点是每次签发和更新证书都要先停止nginx容器，这会造成网站服务中断。如果需要保证服务不中断，可以为nginx容器单独配一个验证用的wwwroot。
+
+
