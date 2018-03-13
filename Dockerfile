@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM debian:stretch-slim
 MAINTAINER yakeworld@gmail.com 
 RUN apt update \
     && apt-get -yq install build-essential wget git \
@@ -37,4 +37,4 @@ RUN apt update \
     && chmod a+x /opt/entrypoint.sh
 #ENTRYPOINT ["/opt/entrypoint.sh"]
 CMD ["/usr/local/nginx/sbin/nginx"]    
-    
+
