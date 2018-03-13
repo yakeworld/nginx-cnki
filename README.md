@@ -24,8 +24,8 @@
 
     docker run --name nginx-cnki -p 80:80 -p 443:443 \
         -v /var/nginx/conf.d:/usr/local/nginx/conf.d \
-        -v /var/nginx/letsencrypt/live:/usr/local/external \
-        nginx-cnki
+        -v /var/nginx/letsencrypt/archive:/usr/local/nginx/external \
+        yakeworld/nginx-cnki
 
 第一个-v是存放nginx配置文件的目录，第二个-v就是存放证书的目录，接下来我们在网站的配置文件里把证书配上去
 
